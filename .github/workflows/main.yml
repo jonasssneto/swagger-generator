@@ -1,4 +1,5 @@
 name: swagger-generator
+on: [push]
 jobs:
   redocly:
     runs-on: ubuntu-latest
