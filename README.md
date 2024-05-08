@@ -6,7 +6,7 @@ How this works?
 
 This script helps automate your documentation process. To use it, create a Swagger JSON file following the OpenAPI pattern and place it in the `JSON` folder. Then, run `make.sh`, which will generate HTML documentation and create a homepage to easily access all generated files.
 
-You can integrate this script with GitHub Actions and GitHub Pages to automate deployment. For example, set it up to run on the `example` branch.
+You can integrate this script with GitHub Actions and GitHub Pages to automate deployment
 
 ## How to use?
 
@@ -36,8 +36,8 @@ jobs:
       - name: Install Redocly CLI
         run: npm install -g @redocly/cli
 
-      - name: chmod to swagger.sh
-        run: chmod +x swagger.sh
+      - name: chmod to make
+        run: chmod +x make.sh
 
       - name: Build docs
         run: ./make.sh
