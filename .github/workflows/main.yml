@@ -10,8 +10,8 @@ jobs:
       - name: Install Redocly CLI
         run: npm install -g @redocly/cli
 
-      - name: chmod to swagger.sh
-        run: chmod +x swagger.sh
+      - name: chmod to make
+        run: chmod +x make.sh
 
       - name: Build docs
         run: ./make.sh
