@@ -1,0 +1,28 @@
+name: swagger-generator
+jobs:
+  redocly:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Install Redocly CLI
+        run: npm install -g @redocly/cli
+
+      - name: chmod to swagger.sh
+        run: chmod +x swagger.sh
+
+      - name: Build docs
+        run: ./make.sh
+
+      - name: Commit changes
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "github-actions"
+          git add --all
+          git commit -m "Generate swagger documentation"
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+          branch: main
