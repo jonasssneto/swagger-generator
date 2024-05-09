@@ -6,13 +6,10 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
-
       - name: Install Redocly CLI
         run: npm install -g @redocly/cli
-
       - name: chmod to make
         run: chmod +x make.sh
-
       - name: Build docs
         run: ./make.sh
 
